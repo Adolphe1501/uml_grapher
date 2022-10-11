@@ -1,7 +1,7 @@
-# Template for Maven based exercises
+# UML grapher Project
 
-[![build workflow](https://github.com/lernejo/maven_starter_template/actions/workflows/build.yml/badge.svg)](https://github.com/lernejo/maven_starter_template/actions)
-[![codecov](https://codecov.io/gh/lernejo/maven_starter_template/branch/main/graph/badge.svg)](https://codecov.io/gh/lernejo/maven_starter_template)
+[![build workflow](https://github.com/Adolphe1501/uml_grapher/actions/workflows/build.yml/badge.svg)](https://github.com/Adolphe1501/uml_grapher/actions)
+[![codecov](https://codecov.io/gh/Adolphe1501/uml_grapher/branch/main/graph/badge.svg)](https://codecov.io/gh/Adolphe1501/uml_grapher)
 
 ## Build the project
 
