@@ -13,22 +13,20 @@ import java.security.MessageDigest;
 import java.util.concurrent.Callable;
 
 @Command(name = "Mermaid Graph", mixinStandardHelpOptions = true, version = "java to Mermaid 1.0",
-    description = "Prints the mermaid of a java class")
+    description = "Prints the mermaid of java class")
 
 public class Launcher implements Callable<Integer> {
 
     @Option(names = {"-c", "--classes"}, description = "renseigner les classes d'où faire partir l'analyse")
-    private final Class<?> [] aClass =null;
+    private final Class<?> [] aClass ={};
 
     @Option(names = {"-g", "--graph-type"}, description = "sélectionner le type de graph que l'on souhaite en sortie")
-    private final UmlGraph.GraphType graphType = UmlGraph.GraphType.Mermaid ;
+    private final GraphType graphType = GraphType.Mermaid ;
     @Override
     public Integer call() throws Exception { // your business logic goes here...
 
-        UmlGraph graph = new UmlGraph(aClass[0]);
-
-        String output = graph.as(UmlGraph.GraphType.Mermaid);
-        System.out.println(output);
+        UmlGraph umlGraph = new UmlGraph(aClass);
+        System.out.println(umlGraph.as(graphType));
         return 0;
     }
 
