@@ -13,11 +13,7 @@ public class UmlRelation {
             Class [] result = graphRepresentation.getInterfaces();
             for (int i=0; i< graphRepresentation.getInterfaces().length; i++)
                 output[i] = result[i].getSimpleName();
-        }/*else {
-            if(graphRepresentation.getSuperClass() != null){
-                output = graphRepresentation.getSuperClass().getSimpleName();
-            }
-        }*/
+        }
         return output;
     }
 

@@ -1,15 +1,14 @@
 package fr.lernejo.umlgrapher;
 
+import org.apache.maven.surefire.shade.org.apache.commons.lang3.ArrayUtils;
+import org.reflections.Reflections;
+import org.reflections.scanners.Scanners;
+import org.reflections.util.ConfigurationBuilder;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
-import picocli.CommandLine.Parameters;
 
-import java.io.File;
-import java.lang.reflect.Modifier;
-import java.math.BigInteger;
-import java.nio.file.Files;
-import java.security.MessageDigest;
+import java.util.Set;
 import java.util.concurrent.Callable;
 
 @Command(name = "Mermaid Graph", mixinStandardHelpOptions = true, version = "java to Mermaid 1.0",
