@@ -1,13 +1,9 @@
 package fr.lernejo.umlgrapher;
 
 import org.apache.maven.surefire.shade.org.apache.commons.lang3.ArrayUtils;
-import org.reflections.Reflections;
-import org.reflections.scanners.Scanners;
-import org.reflections.util.ConfigurationBuilder;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 public class InternalGraphRepresentation {
 
@@ -17,6 +13,8 @@ public class InternalGraphRepresentation {
     private final  String packageName;
     private final String type;
     private final UmlRelation relation ;
+    private final Field[] fields ;
+    private final Method[] methods;
     public InternalGraphRepresentation(Class aClass, String type){
         this.name = aClass.getSimpleName();
         this.packageName = aClass.getPackageName();
@@ -24,6 +22,8 @@ public class InternalGraphRepresentation {
         this.interfaces = aClass.getInterfaces();
         this.type = type ;
         this.relation = new UmlRelation(this);
+        this.fields = aClass.getDeclaredFields();
+        this.methods = aClass.getDeclaredMethods();
     }
 
     public String name() {
@@ -61,5 +61,11 @@ public class InternalGraphRepresentation {
 
     public UmlRelation getRelation() {
         return relation;
+    }
+    public Field[] getFields(){
+        return this.fields;
+    }
+    public Method[] getMethods() {
+        return methods;
     }
 }

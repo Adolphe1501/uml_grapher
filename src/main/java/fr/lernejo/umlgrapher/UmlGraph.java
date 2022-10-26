@@ -53,14 +53,6 @@ public class UmlGraph {
         }
     }
     public Class[] getAllChildClass(Class umlClass){
-//        Class[] theClass = null ;
-/*
-        for (int i = 0; i < umlClass.length; i++) {
-            reflections = new Reflections(new ConfigurationBuilder()
-                .forPackage("")
-                .forPackage("", umlClass.getClassLoader())
-            );
-*/
         Reflections reflections = new Reflections(new ConfigurationBuilder()
             .forPackage("")
             .forPackage("", umlClass.getClassLoader()) );
